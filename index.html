@@ -20,10 +20,6 @@
 	<script src="scripts/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-<!--  
-<a href="http://www.facebook.com/pages/Zander-Sherman/184551644894708">Facebook</a>
-<a href="http://twitter.com/#!/zandersherman">Twitter</a>
--->
 	<header>
 		<ul>
 			<li class="share-facebook">
@@ -44,16 +40,45 @@
 		<div id="content">
 			<ul class="clearfix">
 				<li id="wheretobuy">
-					<p>where to buy</p>
+					<div class="inner">
+						<a href="#" class="close ir">x</a>
+						<p><a href="www.amazon.ca">Amazon.ca</a></p>
+						<p class="disabled">Amazon.com (coming soon)</p>
+					</div>
 				</li>
 				<li id="facebook">
-					<p>facebook</p>
+					<div class="inner">
+						<a href="#" class="close ir">x</a>
+						<p>Leave your comments on The Curiosity of School here, and <a href="http://www.facebook.com/pages/Zander-Sherman/184551644894708">befriend Zander Sherman on Facebook</a>.</p>
+						<div class="fb-comments" data-href="http://zandersherman.com" data-num-posts="10" data-width="446"></div>
+					</div>
 				</li>
 				<li id="twitter">
-					<p>twitter</p>
+					<div class="inner">
+						<a href="#" class="close ir">x</a>
+						<p>Share your thoughts on The Curiosity of School
+with hashtag <a href="https://twitter.com/#!/search/realtime/%23TCOS">#TCOS</a>, and follow <a href="https://twitter.com/#!/zandersherman/">@zandersherman</a>.</p>
+						<a href="http://twitter.com/share?text=Just%20read%20The%20Curiosity%20of%20School%20by%20Zander%20Sherman.%20Sparked%20a%20lot%20of%20ideas%20about%20schooling%20and%20education.&url=http://www.zandersherman.com/" target="_blank">Join the conversation</a>
+					</div>
 				</li>
 				<li id="contact">
-					<p>contact</p>
+					<div class="inner">
+						<a href="#" class="close ir">x</a>
+						<h3>Media relations in Canada</h3>
+						<p>Beth Lockley<br>
+							<a href="mailto:Beth.Lockley@ca.PenguinGroup.com">Beth.Lockley@ca.PenguinGroup.com</a>
+						</p>
+
+						<h3>Media relations in the United States</h3>
+						<p>To be announced</p>
+
+						<h3>Professional inquiries</h3>
+						<p>Meghan Macdonald<br>
+							<a href="mailto:meghan.macdonaldtla@gmail.com">meghan.macdonaldtla@gmail.com</a>
+						</p>
+
+						<p>Website by <a href="http://www.mosney.net/" target="_blank">Mosney.net</a></p>
+					</div>
 				</li>
 			</ul>
 		</div>
@@ -62,12 +87,14 @@
 
 	<nav>
 		<ul class="clearfix">
-			<li class="first-child"><a href="#wheretobuy" data-link-type="popover" data-size="100x500">Where to Buy</a></li>
-			<li class="second"><a href="#facebook" data-link-type="popover" data-size="100x500">Facebook</a></li>
-			<li class="third"><a href="#twitter" data-link-type="popover" data-size="100x500">Twitter</a></li>
-			<li class="last-child"><a href="#contact" data-link-type="popover" data-size="100x500">Contact</a></li>
+			<li class="first-child"><a href="#wheretobuy">Where to Buy</a></li>
+			<li class="second"><a href="#facebook">Facebook</a></li>
+			<li class="third"><a href="#twitter">Twitter</a></li>
+			<li class="last-child"><a href="#contact">Contact</a></li>
 		</ul>
 	</nav>
+
+	<div id="fb-root"></div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="scripts/libs/jquery-1.7.1.min.js"><\/script>')</script>
@@ -77,18 +104,27 @@
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	<script type="text/javascript">
+		// Google+ button
 		(function() {
 			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
 			po.src = 'https://apis.google.com/js/plusone.js';
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();
-	</script>
 
-	<script>
-		// var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-		// (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-		// g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-		// s.parentNode.insertBefore(g,s)}(document,'script'));
+		// Facebook comments embed
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=159566304100946";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		// Google Analytics
+		var _gaq=[['_setAccount','UA-32884540-1'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
 </body>
 </html>

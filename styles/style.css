@@ -18,19 +18,21 @@ html, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 body { margin: 0; font-size: 1em; line-height: 1.4; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #9f742d; color: #fff; text-shadow: none; }
+::selection { background: #9f742d; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
 	 Links
 	 ========================================================================== */
 
-a { color: #00e; }
+a { color: #9f742d; }
 a:visited { }
-a:hover { color: #ffc658; }
+a:hover { color: #9f742d; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
+
+.disabled { color: #aaa !important; cursor: default; }
 
 
 /* =============================================================================
@@ -193,7 +195,6 @@ td { vertical-align: top; }
 header { position: relative; }
 header ul { margin: 0; position: absolute; top: 0; right: 0; list-style: none none; }
 header ul li { float: left; margin-right: 10px; }
-header ul li a { width: 16px; height: 16px; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; }
 header ul li.share-facebook { padding-top: 6px; }
 header ul li.share-twitter,
 header ul li.share-google { padding-top: 10px; }
@@ -202,15 +203,16 @@ header ul li.share-twitter { width: 90px; }
 #main { width: 100%; text-align: center; }
 #main #hero { margin: 120px 0 60px 65px; }
 
-#main #content { position: fixed; bottom: 68px; width: 100%; }
+/* content popovers */
+#main #content { position: fixed; bottom: 68px; width: 100%; text-align: left; }
+#main #content h3 { font-size: 1em; margin: 0 auto 2px; }
 #main #content ul { position: relative; width: 820px; margin: 0 auto; padding: 0; list-style: none none; }
 #main #content ul li { display: none; position: absolute; bottom: 0; background-color: #fff; 
 	-moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
 	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.8);
 }
-#main #content ul li:after { content:""; position:absolute; bottom:-18px; z-index:1; display: block; width: 32px; height: 18px; background: url('/images/arrow-down.png') no-repeat; }
-
+#main #content ul li:after { content: ""; position: absolute; bottom: -18px; z-index: 1; display: block; width: 32px; height: 18px; background: url('/images/arrow-down.png') no-repeat; }
 
 #main #content.wheretobuy ul li#wheretobuy,
 #main #content.facebook ul li#facebook,
@@ -218,7 +220,7 @@ header ul li.share-twitter { width: 90px; }
 #main #content.contact ul li#contact { display: block; }
 
 #main #content ul li#wheretobuy { width: 414px; left: 0; }
-#main #content ul li#facebook { width: 486px; left: 167px; }
+#main #content ul li#facebook { width: 486px; height: 600px; left: 167px; }
 #main #content ul li#twitter { width: 486px; left: 167px; }
 #main #content ul li#contact { width: 414px; right: 0; }
 
@@ -227,15 +229,27 @@ header ul li.share-twitter { width: 90px; }
 #main #content ul li#twitter:after { left: 370px; }
 #main #content ul li#contact:after { right: 30px; }
 
+#main #content ul li a { color: #9f742d; -webkit-transition: color 0.25s linear; }
+#main #content ul li a:hover { color: #cda35d; }
+
+/* close button */
+#main #content ul li a.close { position: absolute; top: 14px; right: 14px; width: 11px; height: 10px; background-image: url('/images/x.png'); }
+#main #content ul li a.close:hover { background-position: 0 -10px; }
+
+#main #content ul li .inner { padding: 30px 20px 10px; }
+#main #content ul li p { margin: 0 auto 16px; }
+
 nav { position: fixed; bottom: 0; height: 50px; width: 100%; background-color: #000; }
 nav ul { width: 820px; margin: 0 auto; padding: 0; list-style: none none; }
-nav ul li { float: left; margin-right: 120px; font: 25px/50px 'Oswald', Arial, sans-serif; font-weight: 300; letter-spacing: 0.1em; }
+nav ul li { float: left; margin-right: 120px; font: 25px/50px 'Oswald', Helvetica, sans-serif; font-weight: 300; letter-spacing: 0.1em; }
 nav ul li a { text-transform: uppercase; text-decoration: none; color: #fff; }
 nav ul li.third,
 nav ul li.last-child { margin-right: 0; }
 nav ul li.last-child { float: right; }
 
-
+/* Short page shouldn't use position fixed for nav because it prevents scrolling to the content */
+body.short #main #content { position: static; margin-bottom: 18px; }
+body.short nav { position: static; }
 
 
 
