@@ -48,9 +48,36 @@ $(document).ready(function() {
 				}
 			}, this));
 
+			$('#twitter-popup').click($.proxy(function(e){
+				this.openTwitter(e);
+			}, this));
+
 			$(window).resize($.proxy(function(){
 				this.setContentPositioning();
 			}, this));
+		},
+		openTwitter: function(e){
+			var windowObjectReference,
+				offset = $('#twitter').offset(),
+				contentLeft = offset.left,
+				contentTop = offset.top,
+				popupHeight = 180;
+
+			if(window.screenX) {
+				var windowLeft = window.screenX,
+					windowTop = window.screenY;
+			} else {
+				var windowLeft = window.screenLeft,
+					windowTop = window.screenTop;
+			}
+
+			windowObjectReference = window.open("http://twitter.com/share?text=Just%20read%20The%20Curiosity%20of%20School%20by%20Zander%20Sherman.%20Sparked%20a%20lot%20of%20ideas%20about%20schooling%20and%20education .&url=http://www.zandersherman.com/",
+				"Twitter",
+				"resizable=yes,scrollbars=no,status=no,left="+(windowLeft+contentLeft)+",top="+(windowTop+contentTop-popupHeight-window.scrollY)+",width=486,height="+popupHeight);
+
+			console.log(windowTop,contentTop,popupHeight);
+
+			if(windowObjectReference) e.preventDefault();
 		},
 		showPopOver: function(id){
 			if($('#'+id).length == 0) return;
