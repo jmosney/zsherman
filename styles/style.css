@@ -205,12 +205,12 @@ header ul li.share-twitter { width: 90px; }
 
 #main section { text-align: left; width: 820px; margin: 0 auto; }
 #main section p { margin-top: 0; }
-#main section .first { float: left; width: 500px; }
-#main section .last { float: right; width: 300px; }
+#main section .first { float: left; width: 470px; }
+#main section .last { float: right; width: 240px; padding-right: 40px; }
 #main section blockquote { color: #b38018; position: relative; font: 30px/35px 'Oswald', Helvetica, sans-serif; font-weight: 300; }
 #main section blockquote span { position: absolute; font-size: 60px; }
 #main section blockquote span.leftquote { top: 10px; left: 0; }
-#main section blockquote span.rightquote { bottom: 35px; right: 0; }
+#main section blockquote span.rightquote { bottom: 35px; right: 10px; }
 #main section blockquote br { line-height: 50px; }
 
 /* content popovers */

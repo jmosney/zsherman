@@ -75,8 +75,6 @@ $(document).ready(function() {
 				"Twitter",
 				"resizable=yes,scrollbars=no,status=no,left="+(windowLeft+contentLeft)+",top="+(windowTop+contentTop-popupHeight-window.scrollY)+",width=486,height="+popupHeight);
 
-			console.log(windowTop,contentTop,popupHeight);
-
 			if(windowObjectReference) e.preventDefault();
 		},
 		showPopOver: function(id){
