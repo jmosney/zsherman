@@ -61,7 +61,7 @@ $(document).ready(function() {
 				offset = $('#twitter').offset(),
 				contentLeft = offset.left,
 				contentTop = offset.top,
-				popupHeight = 180;
+				popupHeight = 170;
 
 			if(window.screenX) {
 				var windowLeft = window.screenX,
