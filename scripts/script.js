@@ -11,7 +11,7 @@ $(document).ready(function() {
 			return $('#' + this.currentPopOverId);
 		},
 		initialize: function(){
-			// check for hash and load appropriate popover
+			// if there's a hash load appropriate popover
 			if(window.location.hash) {
 				var id = window.location.hash.replace('#','');
 				this.showPopOver(id);
@@ -34,24 +34,25 @@ $(document).ready(function() {
 				e.preventDefault();
 			}, this));
 
+			// popover close button
 			$('#content a.close').click($.proxy(function(e){
-				var id = $(e.currentTarget).parents('li').attr('id');
-
 				this.hidePopOver();
 				e.preventDefault();
 			}, this));
 
+			// if a popover is open and you click anywhere but on it, close it
 			$(document).click($.proxy(function(e){
-				// if a popover is open and 
-				if(e.target.id && e.target.id !== this.currentPopOverId) {
+				if(this.openingState === 'open' && e.target.id !== this.currentPopOverId) {
 					this.hidePopOver();
 				}
 			}, this));
 
+			// tweet popup window
 			$('#twitter-popup').click($.proxy(function(e){
 				this.openTwitter(e);
 			}, this));
 
+			// window resize changes content positioning for short/tall windows
 			$(window).resize($.proxy(function(){
 				this.setContentPositioning();
 			}, this));
@@ -85,10 +86,14 @@ $(document).ready(function() {
 			}
 			
 			this.setCurrentPopOverId(id);
-			this.currentPopOver().fadeIn();
+			this.openingState = 'opening';
+			this.currentPopOver().fadeIn($.proxy(function(){
+				this.openingState = 'open';
+			}, this));
 		},
 		hidePopOver: function(){
 			this.currentPopOver().fadeOut();
+			this.openingState = undefined;
 			this.setCurrentPopOverId('undefined');
 		},
 		setContentPositioning: function(){
