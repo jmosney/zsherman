@@ -278,6 +278,18 @@ body.short #main #content { position: relative; bottom: -102px; }
 body.short nav { position: static; }
 
 
+/* MUSIC PAGE STYLES (prefix with #music) */
+#music { margin: 20px 50px 50px; }
+#music ul { list-style: none; }
+#music h1 { margin-top: 50px; padding-bottom: 10px; border-bottom: 1px solid #000; font: 25px/30px 'Oswald', Helvetica, sans-serif; font-weight: 300; }
+#music dl { width: 500px; margin-bottom: 3px; font-size: 18px; line-height: 26px; }
+#music dl:after { content:"."; display:block; height:0; clear:both; visibility:hidden; }
+#music dt { display: inline; float: left; clear: left; width: 150px; font-weight: bold; }
+#music dd { display: inline; float: left; width: 350px; margin: 0; }
+#music ul li a { font-weight: bold; }
+#music span {  }
+
+
 
 /* ==|== non-semantic helper classes ========================================
 	 Please define your styles before this section.
