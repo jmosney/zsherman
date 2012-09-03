@@ -261,6 +261,7 @@ header ul li.share-twitter { width: 90px; }
 
 #main #content ul li .inner { margin: 30px 20px 10px; overflow: scroll; max-height: 550px; }
 p { margin: 0 auto 16px; }
+p.smaller { font-size: 0.8em; }
 
 /* overlay specific styles */
 #wheretobuy h3 { margin-bottom: 12px; }
@@ -278,7 +279,8 @@ p { margin: 0 auto 16px; }
 #presspraise blockquote:last-of-type:after { display: none; }
 #presspraise cite { font-size: 0.8em; font-style: normal; }
 #social h3 img { margin:-1px 4px 0 0; }
-#contact em { display: inline-block; font-size:.8em; line-height: 1.3em; }
+#contact em { display: inline-block; margin-top:4px; font-size:.8em; line-height: 1.3em; }
+#contact p.smaller { text-align: right; }
 
 nav { position: fixed; bottom: 0; height: 50px; width: 100%; background-color: #000; }
 nav ul { width: 820px; margin: 0 auto; padding: 0; list-style: none none; }
